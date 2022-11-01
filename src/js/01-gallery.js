@@ -1,7 +1,7 @@
 // Add imports above this line
 import { galleryItems } from "./gallery-items";
-import SimpleLightbox from "simplelightbox/dist/simple-lightbox";
-import SimpleLightbox from "simplelightbox/dist/simple-lightbox.esm.js";
+import SimpleLightbox from "simplelightbox";
+import SimpleLightbox from "simplelightbox/dist/simple-lightbox.esm";
 
 
 
@@ -14,32 +14,27 @@ const galleryContainer = document.querySelector('.gallery');
 
 galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup);
 
-galleryContainer.addEventListener('click', onClickImage);
 
 
-
-function onClickImage(event) {
-    event.preventDefault();
-
-  const instance = basicLightbox.create(
-    `<div class="modal">
-      <img src="${event.target.dataset.source}" width="800" height="600">
-     </div>`,
-    {
-      onShow() {
-        document.addEventListener('keydown', closeModalImg)
-      },
-      onClose() {
-        document.removeEventListener('keydown', closeModalImg)
-      },
-    },
-  )
-  instance.show();
-
-  function closeModalImg(event) {
-  if (event.code === 'Escape') {
-    instance.close();
-  }
+function createGalleryImages(images) {
+    const markupImages = images.map(({preview,original,description }) => {
+        return `
+       <div class="gallery__item">
+  <a class="gallery__link" href="${preview}">
+    <img
+      class="gallery__image"
+      src="${preview}"
+      data-source="${original}"
+      alt="${description}"
+    />
+  </a>
+</div>`
+    }).join('');
+    return markupImages;
 }
-}
+const lightbox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+  captionDelay: 250
+});
+lightbox.open;
 
