@@ -32,9 +32,10 @@ function createGalleryImages(images) {
     }).join('');
     return markupImages;
 }
-const lightbox = new SimpleLightbox('.gallery a', {
-    captionsData: 'alt',
-  captionDelay: 250
+
+const lightbox = new SimpleLightbox(".gallery a", {
+    captionsData: "alt",
+  captionDelay: 250,
 });
-lightbox.open;
+lightbox.open("show.simplelightbox");
 
