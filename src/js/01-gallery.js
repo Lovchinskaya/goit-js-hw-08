@@ -1,7 +1,10 @@
 // Add imports above this line
-import {galleryItems} from "./gallery-items.js";
-import "simplelightbox/dist/simple-lightbox.min.css";
-import SimpleLightbox from "simplelightbox";
+import { galleryItems } from "./gallery-items";
+import SimpleLightbox from "simplelightbox/dist/simple-lightbox";
+import SimpleLightbox from "simplelightbox/dist/simple-lightbox.esm.js";
+
+
+
 
 // Change code below this line
 

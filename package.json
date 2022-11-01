@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
+    "url": "git+https://lovchinskaya.github.io/goit-js-hw-08/"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "modern-normalize": "^1.1.0",
+    "save": "^2.9.0",
     "simplelightbox": "^2.10.4"
   },
   "devDependencies": {
