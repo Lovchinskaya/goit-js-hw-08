@@ -9,11 +9,13 @@
   player.on('timeupdate', throttle(setTime, 1000));
 
 function setTime(data) {
-  if (localStorage !== '') {
         localStorage.setItem(keyStorage, data.seconds);
   }
-  }
 
-  player.setCurrentTime(currentTime);
+
+  if(currentTime){
+player.setCurrentTime(currentTime);
+}
+
 
 
